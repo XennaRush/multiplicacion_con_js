@@ -1,5 +1,4 @@
-const formulario = document.getElementById("formulario");
-const resultado = document.getElementById("resultado");
+/*const formulario = document.getElementById("formulario");
 
 formulario.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -10,4 +9,16 @@ formulario.addEventListener("submit", function(event) {
     console.log("Número 1:", n1);
     console.log("Número 2:", n2);
     console.log("La multiplicación es:", m);
+});*/
+
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const datos = new FormData(formulario);
+    console.log(datos.get("n1"))
+    console.log(datos.get("n2"))
+    const r = datos.get("n1") * datos.get("n2")
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML= "Resultado: "+r
 });
